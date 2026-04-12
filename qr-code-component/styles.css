@@ -1,4 +1,4 @@
-.root {
+:root {
     /* Colors */
     --slate-900-color: #1f314f;
     --slate-500-color: #68778d;
@@ -9,6 +9,10 @@
     --spacing-500: 40px;
     --spacing-300: 24px;
     --spacing-200: 16px;
+
+    /* Others */
+    --font-primary: 'Outfit', system-ui, -apple-system, sans-serif;
+    --shadow-card: 0px 4px 16px 4px hsl(220, 15%, 55%); /* offset-x | offset-y | blur-radius | spread-radius | color */
 }
 
 * {
@@ -16,16 +20,16 @@
 }
 
 .text-preset-1 {
-  font-family: 'Outfit', sans-serif;
-  font-size: 22px;
+  font-family: var(--font-primary);
+  font-size: 1.375rem;
   font-weight: 700; /* Bold */
   line-height: 120%;
-  letter-spacing: 0px;
+  letter-spacing: 0;
 }
 
 .text-preset-2 {
-  font-family: 'Outfit', sans-serif;
-  font-size: 15px;
+  font-family: var(--font-primary);
+  font-size: 0.9375rem;
   font-weight: 400; /* Regular */
   line-height: 140%;
   letter-spacing: 0.2px;
@@ -34,27 +38,27 @@
 
 body {
     background-color:  var(--slate-300-color);
-    font-family: 'Outfit', sans-serif;
-    font-size: 15px; /* Paragraph size */
-    padding: 0px;
-    margin: 0px;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
 }
 
-#container{
+.container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
 }
 
-#card {
-    background-color: var(--white);
-    width: 320px;
+.card {
+    background-color: var(--white-color);
+    width: min(320px, 90%);;
     border-radius: 20px;
-    box-shadow: 0px 4px 15px 5px hsl(220, 15%, 55%); /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: var(--shadow-card);
     margin: 0 auto;
     padding: 16px 16px 40px 16px;
     display: flex;
@@ -72,8 +76,8 @@ body {
     margin: 0;
 }
 
-#info {
-    padding: 0px 16px;
+.info-section {
+    padding: 0 16px;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -84,14 +88,6 @@ body {
     text-align: center;
     vertical-align: top;
     margin: 0;
-}
-
-
-/* Media query for mobile screens */
-@media (max-width: 375px) {
-    #card {
-        height: auto;  /* remove fixed height */
-    }
 }
 
 
