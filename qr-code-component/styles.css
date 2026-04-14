@@ -10,6 +10,15 @@
     --spacing-300: 1.5rem;
     --spacing-200: 1rem;
 
+    /* Space tokens */
+
+    --space-xxs: 4px;
+    --space-xs: 8px;
+    --space-sm: 12px;
+    --space-md: 16px; /* replaces 16px */
+    --space-lg: 24px;
+    --space-xl: 40px; /* replaces 40px */
+
     /* Others */
     --font-primary: 'Outfit', system-ui, -apple-system, sans-serif;
     --shadow-card: 0px 4px 16px 4px hsl(220, 15%, 55%); /* offset-x | offset-y | blur-radius | spread-radius | color */
@@ -37,7 +46,7 @@
 body {
     background-color:  var(--slate-300-color);
     font-family: var(--font-primary);
-    font-size: 1rem;
+    font-size: calc(1rem + 1.5vw);
     padding: 0;
     margin: 0;
 }
@@ -54,16 +63,16 @@ body {
 
 .card {
     background-color: var(--white-color);
-    width: min(320px, 90%);;
+    width: min(20rem, 90%);;
     border-radius: 20px;
     box-shadow: var(--shadow-card);
     margin: 0 auto;
-    padding: 16px 16px 40px 16px;
+    padding: var(--space-md) var(--space-md) var(--space-xl) var(--space-md);;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 24px;
+    gap: 1.5rem;
 }
 
 .qr-pic {
@@ -76,11 +85,11 @@ body {
 }
 
 .info-section {
-    padding: 0 16px;
+    padding: 0 var(--space-md);
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: clamp(0.75rem, 2vw, 1rem);
 }
 
 .centered-text {
